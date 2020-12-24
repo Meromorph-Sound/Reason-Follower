@@ -1,0 +1,27 @@
+format_version = "1.0"
+
+texts = {
+	["propertyname_LearningRate"] = "Learning Rate",
+	["propertyname_Threshold"] = "Threshold",
+	   ["ui_type template Threshold"] = "^0 V",
+	["propertyname_HalfWave"] = "Half Wave",
+	["propertyname_FullWave"] = "Full Wave",
+	["propertyname_Squared"] = "Squared",
+	["propertyname_Rectification"] = "Rectification",
+	["propertyname_RectificationDisplay"] = "Rectification mode",
+	["on"] = "On",
+	["off"] = "Off",
+	["n/a"] = "N/A",
+	["halfwave"] = "Half Wave",
+	["fullwave"] = "Full Wave",
+	["squared"] = "Squared",
+	["audioInput"] = "Audio Input",
+	["envelopeOutput"] = "Audio envelope out",
+	["envOutput"] = "Envelope CV out",
+	["gateOutput"] = "Gate CV out",
+	["propertyname_GateDisplay"] = "Gate",
+	["short_learningRate"] = "lRate",
+	["shortest_learningRate"] = "LrnR",
+	["short_threshold"] = "Thresh",
+  ["shortest_threshold"] = "Thr",
+}
