@@ -30,6 +30,8 @@ rt_input_setup = {
 		"/custom_properties/learningRate",
 		"/custom_properties/threshold",
 		"/custom_properties/rectification",
+		"/custom_properties/inputGain",
+		"/custom_properties/outputGain",
     "/audio_inputs/signal1/connected",
     "/audio_inputs/signal2/connected"
 	}

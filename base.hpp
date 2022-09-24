@@ -22,6 +22,8 @@ using int64 = TJBox_Int64;
 using float64 = TJBox_Float64;
 using float32 = TJBox_AudioSample;
 
+#define PI 3.14159265
+
 enum class State : int32 {
 	Off = 0, On = 1, Bypassed = 2
 };

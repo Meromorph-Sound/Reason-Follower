@@ -3,42 +3,24 @@
 #include "base.hpp"
 #include <vector>
 #include <cmath>
+#include "Rectifier.hpp"
 
 namespace meromorph { namespace follower {
 
 enum Tags : uint32 {
 		LR=1,
 		TH=2,
-		BUTTON=3,
+		RECTIFICATION=3,
 		MODE=4,
-		GATE=5
+		GATE=5,
+		INPUT_GAIN=6,
+		OUTPUT_GAIN=7
 	};
 
-class Rectifier {
-private:
-	TJBox_ObjectRef signal;
-	TJBox_ObjectRef output;
-	float32 last = 0;
-	std::vector<float32> audio;
-
-	uint32 read();
-	void write();
-
-public:
-	Rectifier(const char *code);
-
-	float32 operator()(const int32 mode,const float32 rho,const float32 threshold);
-	void bypass();
-	void reset();
-
-	bool isConnected() const;
-
-
-};
 
 class CFollower {
 
-	
+
 private:
 
 
@@ -55,6 +37,8 @@ private:
 	bool connR = false;
 	float32 gateScale=1.0;
 	Rectifier left, right;
+	float32 inputGain =1.0;
+	float32 outputGain = 1.0;
 
 	template<typename T>
 		void set(const Tags tag,const T value) {
@@ -67,10 +51,10 @@ private:
 
 public:
 	static const uint32 BUFFER_SIZE;
-	explicit CFollower(); 
-//	~CFollower(); 
-    
-    
+	explicit CFollower();
+//	~CFollower();
+
+
     void RenderBatch(const TJBox_PropertyDiff iPropertyDiffs[], TJBox_UInt32 iDiffCount);
 
 };

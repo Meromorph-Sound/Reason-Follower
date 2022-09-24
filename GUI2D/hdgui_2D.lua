@@ -1,4 +1,12 @@
 format_version = "2.0"
+
+function analogKnob(name,property)
+	return jbox.analog_knob {
+			graphics = { node = name },
+			value = "/custom_properties/"..property,
+		}
+end
+
 front = jbox.panel { 
 	graphics = {
 		node = "Bg",
@@ -12,19 +20,42 @@ front = jbox.panel {
 			graphics = { node = "threshold" },
 			value = "/custom_properties/threshold",
 		},
-		jbox.step_button {
-		  graphics = { node = "rectification" },
-		  value = "/custom_properties/rectification",
-		  increasing = true
+		jbox.analog_knob {
+			graphics = { node = "inGain" },
+			value = "/custom_properties/inputGain",
 		},
+		jbox.analog_knob {
+			graphics = { node = "outGain" },
+			value = "/custom_properties/outputGain",
+		},
+		jbox.radio_button {
+			graphics = { node = "fullWave" },
+			value = "/custom_properties/rectification",
+			index=1,
+		},
+		jbox.radio_button {
+			graphics = { node = "halfWave" },
+			value = "/custom_properties/rectification",
+			index=0,
+		},
+		jbox.radio_button {
+			graphics = { node = "squaring" },
+			value = "/custom_properties/rectification",
+			index=2,
+		},
+		--jbox.step_button {
+		--  graphics = { node = "rectification" },
+		--  value = "/custom_properties/rectification",
+		--  increasing = true
+		--},
 		--jbox.toggle_button {
 		--	graphics = { node = "rectification" },
 		--	value = "/custom_properties/rectification",
 		--},
-		jbox.sequence_meter {
-			graphics = { node="rectificationDisplay" },
-			value = "/custom_properties/rectification",
-		},
+		--jbox.sequence_meter {
+		--	graphics = { node="rectificationDisplay" },
+		--	value = "/custom_properties/rectification",
+		--},
 		jbox.sequence_meter {
 		  graphics = { node="thresholdLED" },
 		  value = "/custom_properties/thresholdLED",

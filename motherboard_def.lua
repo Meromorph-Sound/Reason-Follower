@@ -22,7 +22,19 @@ custom_properties = jbox.property_set{
         steps = 3,
         ui_name = jbox.ui_text("propertyname_Rectification"),
         ui_type = jbox.ui_selector { jbox.ui_text("halfwave"), jbox.ui_text("fullwave"), jbox.ui_text("squared") },
-      }
+      },
+      inputGain = jbox.number {
+      	property_tag = 6,
+      	default = 0.0,
+      	ui_name = jbox.ui_text("propertyname_ingain"),
+      	ui_type = jbox.ui_linear({min=-1, max=1, units={{decimals=2}}}),
+      },
+      outputGain = jbox.number {
+      	property_tag = 7,
+      	default = 0.0,
+      	ui_name = jbox.ui_text("propertyname_outgain"),
+      	ui_type = jbox.ui_linear({min=-1, max=1, units={{decimals=2}}}),
+      },
 		}
 	},
 	rt_owner = {
@@ -47,7 +59,7 @@ midi_implementation_chart = {
   midi_cc_chart = {
    [20] = "/custom_properties/learningRate",
    [21] = "/custom_properties/threshold",
-   [22] = "/custom_properties/rectification"
+   [22] = "/custom_properties/rectification",
   }
 }
 
