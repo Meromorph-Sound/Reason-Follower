@@ -73,7 +73,7 @@ void CFollower::RenderBatch(const TJBox_PropertyDiff diffs[], TJBox_UInt32 nDiff
 				trace("State is now ^0",static_cast<int32>(state));
 				break; }
 			case Tags::LR: {
-				auto f=toFloat(diff.fCurrentValue)*0.0625f;
+				auto f=toFloat(diff.fCurrentValue)*0.5f;
 				rho = log2(1+f);
 				trace("Rho is now ^0",rho);
 				break; }

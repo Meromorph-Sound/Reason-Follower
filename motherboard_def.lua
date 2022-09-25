@@ -8,7 +8,7 @@ custom_properties = jbox.property_set{
 				property_tag = 1,
 				default = 0.0,
 				ui_name = jbox.ui_text("propertyname_LearningRate"),
-				ui_type = jbox.ui_linear({min=0, max=1, units={{decimals=4}}}),
+				ui_type = jbox.ui_linear({min=0, max=0.5, units={{decimals=4}}}),
 			},
 			threshold = jbox.number { 
 				property_tag = 2,
