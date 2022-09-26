@@ -3,6 +3,7 @@ format_version = "1.0"
 local Axes = { r=180,g=180,b=180 }
 local Rect = { r=80,g=80,b=80,a=128 }
 local Graph = { r=0,g=255,b=0  }
+local Cutoff = { r=255,g=0,b=0 }
 
 function clip(value)
   return math.max(0,math.min(1,value))
@@ -23,8 +24,8 @@ function drawFilter(property_values,display_info,dirty_rect)
   local a = clip(property_values[1])
   local rho = log2(1+0.5*a)
   
-  local exponent = clip(property_values[2])
-
+  local b = clip(property_values[2])
+  local threshold = log2(1+b)
   
   local w = display_info.width
   local h = display_info.height
@@ -43,7 +44,7 @@ function drawFilter(property_values,display_info,dirty_rect)
    
     local points={}
     jbox.trace("Rho ="..rho)
-    jbox.trace("Exponent ="..exponent)
+    jbox.trace("Threshold ="..threshold)
     
     -- lines
     --local yAlpha = h*valueOf(rate,alpha,0,fMin)
@@ -68,6 +69,8 @@ function drawFilter(property_values,display_info,dirty_rect)
     	jbox.trace("cut="..cutoff.." xO="..xOff)
     	jbox_display.draw_rect({left= xOff, top= 0, right= w-1, bottom= h-1},Rect)
     	
+    	local tY = (1-threshold)/yScale
+    	jbox_display.draw_rect({left=0, top= tY-2, right= w-1, bottom= tY+2},Cutoff)
     end
     
     

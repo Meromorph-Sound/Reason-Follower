@@ -61,16 +61,16 @@ front = jbox.panel {
 		  value = "/custom_properties/thresholdLED",
 		},
 		
-		jbox.custom_display {
-      		graphics={ node="display" },
-      		display_width_pixels = 600,
-      		display_height_pixels = 245,
-      		values = {
-        		"/custom_properties/learningRate",
-        		"/custom_properties/threshold"
-        		},
-      		draw_function = "drawFilter"
-    	},
+		--jbox.custom_display {
+      	--	graphics={ node="display" },
+      	--	display_width_pixels = 600,
+      	--	display_height_pixels = 245,
+      	--	values = {
+        --		"/custom_properties/learningRate",
+        --		"/custom_properties/threshold"
+        --		},
+      	--	draw_function = "drawFilter"
+    	--},
 		
 		jbox.device_name {
 			graphics = { node = "deviceName" },

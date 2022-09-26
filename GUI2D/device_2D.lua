@@ -28,7 +28,7 @@ front = {
   	fullWave = { offset = {1000,130}, { path = "Button_53_2frames", frames = 2 }},
   	squaring = { offset = {1000,210}, { path = "Button_53_2frames", frames = 2 }},
   	
-  	display = { offset = {2200,40}, { path = "Display_20_1frames", frames = 1}}
+-- display = { offset = {2200,40}, { path = "Display_20_1frames", frames = 1}}
   }
 }
 back = { 
